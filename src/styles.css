@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    margin: 0;
+    background-color: #D4F1F4;
+    font-family: 'Alkatra';
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Oxygen&display=swap');
+
+@font-face {
+    font-family: 'Alkatra';
+    src: url('./assets/Alkatra-VariableFont_wght.ttf');
+  }

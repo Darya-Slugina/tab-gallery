@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="form-wrapper">
+    <form [formGroup]="searchForm" (ngSubmit)="onSubmit(defaultImages)">
+      <input class="input" type="text" placeholder="Filter images" formControlName="filter">
+    </form>
+  </div>
+
+  <div class="grid-wrapper">
+    <div class="grid-tiles" *ngFor="let image of imagesToDisplay">
+      <div class="grid-tile" (click)="openShowModal(image)"><img [src]="image.urls.small_s3"
+          [alt]="image.alt_description" class="img">
+        <div class="title-container"><span class="title">{{image.description ||
+            image.alt_description}}</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="imageToDislay" class="big-container">
+  <div class="big-image-container"><img [src]="imageToDislay.urls.small" [alt]="imageToDislay.alt_description"
+      class="img-big"><img src="../../../assets/wrong-icon.svg" alt="close-icon" class="close-icon"
+      (click)="closeModal()" /></div>
+</div>

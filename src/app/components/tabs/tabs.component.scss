@@ -1,0 +1,67 @@
+.tabs-container {
+    height: 40px;
+}
+
+.nav-tabs {
+    list-style-type: none;
+    display: flex;
+    height: 30px;
+    padding: 0;
+    margin-left: 25px;
+}
+
+.tab-wrapper {
+    display: flex;
+    position: relative;
+    cursor: pointer;
+
+    .delete-icon {
+        position: absolute;
+        right: 6px;
+        opacity: 0;
+        color: #05445e;
+    }
+}
+
+.tabs-container .tab a {
+    display: inline-block;
+    width: 300px;
+    border: none;
+    border-bottom: 7px solid rgba(0, 0, 0, 0.7);
+    color: #05445e;
+    background-color: #75e6da;
+    padding: 15px 20px;
+    margin: 0 10px 10px 10px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    text-align: center;
+    transition: all 0.3s ease 0s;
+    position: relative;
+    border-radius: 10px 45px 10px 45px;
+
+    &:hover {
+        border: none;
+        background-color: #189ab4;
+        color: #fff;
+        border-bottom: 7px solid rgba(0, 0, 0, 0.7);
+    }
+}
+
+.tabs-container .tab-wrapper:hover {
+    background-color: rgba(221, 242, 252, 0.377);
+
+    .delete-icon {
+        opacity: 1;
+    }
+}
+
+.tabs-container .tab.active a {
+    width: 300px;
+    border: none;
+    background-color: #189ab4;
+    color: #fff;
+    border-bottom: 7px solid rgba(0, 0, 0, 0.7);
+}
