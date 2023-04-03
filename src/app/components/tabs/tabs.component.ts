@@ -48,11 +48,8 @@ export class TabsComponent implements AfterContentInit {
     const activeTabs = this.tabs?.filter(tab => tab.active && tab.tabTitle !== this.lastDeletedTabState.name);
 
     if (activeTabs?.length === 0) {
-      console.log(this.tabs);
-
       this.selectTab(this.tabs.first);
     }
-
   }
 
   ngAfterContentInit() {
@@ -69,7 +66,7 @@ export class TabsComponent implements AfterContentInit {
   }
 
   public disableCurrentTab(title: string): void {
-    const currentTab = this.tabs.filter(tab  => tab.tabTitle === title);
+    const currentTab = this.tabs.filter(tab => tab.tabTitle === title);
 
     if (currentTab) {
       currentTab[0].isDisabled = true;
@@ -79,6 +76,11 @@ export class TabsComponent implements AfterContentInit {
       }
 
       this.disableTab.emit(this.lastDeletedTabState)
+    }
+
+    const disabledTabsNumber = this.tabs?.filter(tab => tab.isDisabled).length;
+    if (disabledTabsNumber === 2) {
+      this.selectTab(this.tabs.first);
     }
   }
 }

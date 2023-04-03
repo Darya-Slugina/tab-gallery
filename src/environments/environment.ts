@@ -1,1 +1,1 @@
-export const environment = { clientId: 'put key here' };
+export const environment = { clientId: 'API_key' };

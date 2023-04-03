@@ -1,8 +1,8 @@
 <div class="tabs-container">
   <ul class="nav-tabs">
     <ng-container *ngFor="let tab of tabs">
-      <div class="tab-wrapper">
-        <li *ngIf="!tab.isDisabled" class="tab" [class.active]="tab.active" (click)="selectTab(tab)"><a href="#" aria-controls="home" role="tab">{{
+      <div class="tab-wrapper" *ngIf="!tab.isDisabled">
+        <li class="tab" [class.active]="tab.active" (click)="selectTab(tab)"><a href="#" aria-controls="home" role="tab">{{
           tab.tabTitle }}</a>
         </li>
         <span *ngIf="isDeleteIconVisible" class="delete-icon" (click)="disableCurrentTab(tab.tabTitle)">X</span>
