@@ -17,10 +17,8 @@ export class GridTilesComponent {
 
     public imagesToDisplay: any[];
     public defaultImages: any[];
-    public data = [];
     public isModalVisible = false;
     public imageToDislay: any;
-    public searchText: string;
 
     constructor(
         private apiService: ApiService
